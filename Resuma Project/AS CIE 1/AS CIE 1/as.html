@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+<title>NOBLE HOSPITAL</title>
+<link rel="stylesheet" href="as.css">
+    </head>
+    <body>
+<div class="container">
+    <nav>
+        <div class="logo">
+            <h1>NOBLE HOSPITAL</h1>
+        </div>
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#doctor">Doctor's</a></li>
+            <li><a href="#speciality">Speciality's</a></li>
+            <li><a href="#patient">Patient Reviews</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><a href="LOGIN.html">Login</a></li>
+            <li><a href="LOGIN.html">Register</a></li>
+        </ul>
+    </nav>
+    
+    <div class="main">
+        <div class="mainText">
+            <h1>The Hospital that<br>Care for you</h1>
+       <h3>Best Team's</h3>
+       <button>Show more</button>
+        </div>
+        <img src="mains.png" alt="">
+    </div>
+
+    <div id="doctor">
+        <div class="head">
+            <h1>Our Doctor's</h1>
+        </div>
+        <div class="doctor">
+            
+            <div class="card">
+                <img src="dt1.jpg">
+                <p>Alexa</p>
+                <p>Surgeon</p>
+            </div>
+            
+            <div class="card">
+                <img src="dt2.jpg">
+                <p>aayush</p>
+                <p>Surgeon</p>
+            </div>
+            
+            <div class="card">
+                <img src="dt3.jpg">
+                <p>Piyush</p>
+                <p>Surgeon</p>
+            </div>
+        
+        </div>
+    </div>
+
+<div id="speciality">
+    <div class="head">
+        <h1>Our Speciality</h1>
+
+    </div>
+    <div class="speciality">
+        <div class="spcard">
+            <img src="s1.png">
+            <p>Knee Surgery</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste maiores temporibus, enim facere quos ut debitis, asperiores cupiditate omnis ratione quisquam soluta provident illum voluptas voluptates expedita inventore assumenda neque!</p>
+        </div>
+        <div class="spcard">
+            <img src="s2.png">
+            <p>Knee Surgery</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste maiores temporibus, enim facere quos ut debitis, asperiores cupiditate omnis ratione quisquam soluta provident illum voluptas voluptates expedita inventore assumenda neque!</p>
+        </div>
+        <div class="spcard">
+            <img src="s3.png">
+            <p>Knee Surgery</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste maiores temporibus, enim facere quos ut debitis, asperiores cupiditate omnis ratione quisquam soluta provident illum voluptas voluptates expedita inventore assumenda neque!</p>
+        </div>
+    </div>
+</div>
+<div id="patient">
+    <div class="head">
+        <h1>Patient Review's</h1>
+    </div>
+    <div class="reviews">
+        <div class="patientReview">
+            <img src="p1.png">
+            <img src="p2.png">
+        </div>
+
+        <div class="patientReview">
+            <img src="p3.jpg">
+            <img src="p4.jpg">
+        </div>
+        <div class="patientReview">
+            <img src="p5.jpg">
+            <img src="p6.jpg">
+        </div>
+    </div>
+</div>
+<div id="contact">
+    <div class="head">
+        <h1>Contact us</h1>
+    </div>
+<div class="contact">
+    <h1>Connect With Us</h1>
+    <input type="text" placeholder="Enter Email" id="email">
+    <input type="password" placeholder="Enter Password" id="pass">
+<button id="connectBtn">Connect</button>
+</div>
+</div>
+<div class="footer">
+    <div class="text">
+<h3>About Us</h3>
+<p>24 Hours</p>
+<p>Top Doctor</p>
+<p>Best Care</p>
+<p>Patient</p>
+</div>
+    <div class="text">
+        <h3>Speciality</h3>
+        <p>Knee Surgery</p>
+        <p>Spin Surgery</p>
+        <p>Leg Surgery</p>
+        <p>Tendon Surgery</p>
+    </div>
+
+    <div class="text">
+        <h3>Best Teams</h3>
+        <p>Doctors</p>
+        <p>Nursing</p>
+        <p>Staff</p>
+        <p>Hospital</p>
+    </div>
+    
+    <div class="text">
+        <h3>Address</h3>
+        <p>Near MG Road</p>
+        <p>Galaxy Care</p>
+        <p>333-09093</p>
+        <p>09-883-090</p>
+    </div>
+</div>
+
+</div>
+<script src="as.js"></script>
+    </body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getDatabase } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyDr4YMaGbR-2a7jZYiEPE7LIQQgXm5r9kA",
+          authDomain: "rbac-cie.firebaseapp.com",
+          databaseURL: "https://rbac-cie-default-rtdb.firebaseio.com",
+          projectId: "rbac-cie",
+          storageBucket: "rbac-cie.appspot.com",
+          messagingSenderId: "354579930719",
+          appId: "1:354579930719:web:c1d16e243ebd6a0f5545ea"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+        const auth = getAuth();
+      </script>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>Noble Hospital</h1>
+        </div>
+        <ul>
+            <li><span>Dashboard</span> </li>
+            <li><span>Doctor</span> </li>
+            <li><span>Patient</span> </li>
+            <li><span>Bill</span> </li>
+            <li><span>Help</span></li>
+            <li><span>Settings</span> </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                    <input type="text" placeholder="Search..">
+                </div>
+                
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+                <div class="user">
+                    <div class="img-case">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>PA225</h1>
+                        <h3>Patient_id</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>WI122</h1>
+                        <h3>Doctor</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>500</h1>
+                        <h3>Room No</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>7854525625</h1>
+                        <h3>Moblie No</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Patient Information</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table id="table">
+                        <tr>
+                            <th>Doctor</th>
+                            <th>Time</th>
+                            
+                        </tr>
+                        <tr>
+                            <td>Ram</td>
+                            <td>11:30</td>
+                            
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Aditya</td>
+                            <td>1:05</td>
+                           
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Soham</td>
+                            <td>10:05</td>
+                            
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Kavya</td>
+                            <td>12:05</td>
+                           
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Prem</td>
+                            <td>18:05</td>
+                           
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+                
+        </div>
+    </div>
+
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore,collection,getDocs } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+        // import { initializeApp } from "firebase/app";
+        // import { getFirestore } from "firebase/firestore";
+        // import firebase from "firebase/compat/app";
+        // // Required for side-effects
+        // import "firebase/firestore";
+    
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+    
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyDfCIAXNh19rwLejb6eKJRpBzJOnrZ1Q8A",
+    authDomain: "cieas-d62ae.firebaseapp.com",
+    projectId: "cieas-d62ae",
+    storageBucket: "cieas-d62ae.appspot.com",
+    messagingSenderId: "52222435833",
+    appId: "1:52222435833:web:e39db9e65d11699fad5d28"
+};
+    
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore();
+        // db.settings({ timestampsInSnapShots: true });
+        const colRef= collection(db,"Course");
+    
+    
+        const courseList=document.querySelector("#course-list");
+    
+    function renderCourse(doc){
+        let li=document.createElement('li');
+        let container = document.createElement('div');
+        let content = document.createElement('div');
+        container.className="container";
+        content.className="content";
+    
+        let title=document.createElement('h3');
+        let des=document.createElement('p');
+    
+        li.setAttribute('data-id',doc.id);
+        title.textContent=doc.data().title;
+        des.textContent=doc.data().Description;
+    
+        courseList.appendChild(li);
+        li.appendChild(container);
+        container.appendChild(content);
+        content.appendChild(title);
+        content.appendChild(des);
+    
+    
+    }
+    
+        
+        getDocs(colRef)
+        .then((snapshot)=>{
+        snapshot.docs.forEach(doc =>{
+            renderCourse(doc);
+        })
+    })
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+            // Perform logout functionality here
+            // For example, you might clear a token stored in local storage
+            localStorage.removeItem('token'); // Assuming token is stored for authentication
+            // Redirect the user to the home page
+            window.location.href = "as.html"; // Redirect to home page
+    })
+      </script>
+</body>
+
+</html>

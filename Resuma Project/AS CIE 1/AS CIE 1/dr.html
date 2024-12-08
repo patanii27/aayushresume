@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h1>Noble Hospital</h1>
+        </div>
+        <ul>
+            <li><span>Dashboard</span> </li>
+            <li><span>Doctor</span> </li>
+            <li><span>Patient</span> </li>
+            <li><span>Income</span> </li>
+            <li><span>Help</span></li>
+            <li><span>Settings</span> </li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                
+                <h1>DOCTOR</h1>
+            <div class="search">
+                    <input type="text" placeholder="Search..">
+                    <button type="submit"></button>
+                </div>
+                <button class="logout-btn" id="logoutBtn">Logout</button>
+                
+                <div class="user">
+                    <div class="img-case">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cards">
+                <div class="card">
+                    <div class="box">
+                        <h1>25</h1>
+                        <h3>Patient</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>WI122</h1>
+                        <h3>Doctor</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>500</h1>
+                        <h3>Rooms</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="box">
+                        <h1>150</h1>
+                        <h3>Staff</h3>
+                    </div>
+                    <div class="icon-case">
+                    </div>
+                </div>
+            </div>
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Patient Information</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Patient</th>
+                            <th>Time</th>
+                            <th>Room</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>Ram</td>
+                            <td>11:30</td>
+                            <td>150</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Aditya</td>
+                            <td>1:05</td>
+                            <td>20</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Soham</td>
+                            <td>10:05</td>
+                            <td>48</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Kavya</td>
+                            <td>12:05</td>
+                            <td>120</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                        <tr>
+                            <td>Prem</td>
+                            <td>18:05</td>
+                            <td>45</td>
+                            <td><a href="#" class="btn">View</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="new-students">
+                    <div class="title">
+                        <h2>New Patient</h2>
+                        <a href="#" class="btn">View All</a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>Name</th>
+                            <th>Room no</th>
+                            <th>Moblie No</th>
+                        </tr>
+                        <tr>
+                            <td>Aryan</td>
+                            
+                            <td>150</td>
+                            
+                            <td>545456464</td>
+                            </tr>
+                        <tr>
+                           <td>Ishaan</td>
+                           
+                           <td>85</td>
+                           <td>858226222</td>
+                           
+
+                           
+
+                        </tr>
+                        <tr>
+                            <td>Aarav</td>
+                            
+                           <td>15</td>
+                           <td>825445632</td>
+                             </tr>
+                        <tr>
+                            
+                            <td>Aliya</td>
+                            
+                           <td>65</td>
+                           <td>7828226226</td>
+                            </tr>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    document.getElementById("logoutBtn").addEventListener("click", function() {
+            // Perform logout functionality here
+            // For example, you might clear a token stored in local storage
+            localStorage.removeItem('token'); // Assuming token is stored for authentication
+            // Redirect the user to the home page
+            window.location.href = "as.html"; // Redirect to home page
+    })
+    
+</script>
+</html>
